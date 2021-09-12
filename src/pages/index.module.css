@@ -1,0 +1,261 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css");
+@import url("https://fonts.googleapis.com/css?family=Playfair Display");
+
+:root {
+  --color-primary: #080808;
+  --color-font: #fbfcfd;
+  --color-drak-green: #3f4739;
+  --color-medium-green: #bacba9;
+  --color-sage: #c0bda5;
+  --font-family: Playfair Display;
+  --font-size: 24px;
+  --spacing: 8px;
+}
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 0.5rem;
+}
+section {
+  min-height: 100vh;
+}
+body {
+  background-color: var(--color-primary);
+  color: var(--color-font);
+}
+
+.wieghtMedium {
+  font-weight: 500;
+}
+
+section:first-of-type {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-image: url("https://media-public.canva.com/MADQ5pw7MLI/1/screen_2x.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-font);
+  position: relative;
+}
+.logo {
+  position: absolute;
+  top: 20vh;
+}
+.hero {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 1vw;
+}
+
+.sectionCompanyProfile,
+.sectionOurService,
+.sectionCareer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: var(--color-primary);
+}
+.sectionCompanyProfile > div,
+.sectionOurService > div,
+.sectionCareer > div {
+  flex: 1 1 50%;
+  display: flex;
+  align-self: center;
+  box-sizing: border-box;
+}
+.imgCompany {
+  height: 60vh;
+}
+div.companyDetails {
+  flex-direction: column;
+  padding-inline: 1rem;
+  gap: 1rem;
+}
+.titleClient {
+  padding: 0 1rem 4rem;
+}
+.sectionClient,
+.careerInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sectionClient,
+.cards h5 {
+  background-color: var(--color-font);
+  color: var(--color-primary);
+}
+.cards h5 {
+  padding: 0.5rem;
+}
+.cards {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  padding: 0 1rem;
+}
+
+.cards > div {
+  z-index: 3;
+}
+
+.cards:after {
+  content: "";
+  position: absolute;
+  bottom: -15%;
+  min-height: 55%;
+  min-width: 100%;
+  background-color: var(--color-primary);
+  z-index: 1;
+}
+.titleService,
+.titleCareer {
+  flex-direction: column;
+}
+
+.services {
+  flex-direction: column;
+}
+.services > div {
+  display: flex;
+}
+.row:not(:last-child) {
+  padding-bottom: 1rem;
+}
+.services > div > span {
+  padding: 0 1rem;
+  font-size: 3rem;
+  color: var(--color-sage);
+}
+
+.imgService {
+  max-width: 400px;
+}
+.imgCareer {
+  max-width: 600px;
+}
+
+.effect {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  /* color: #bfb383; */
+  text-transform: capitalize;
+  /* background-color: - add your own background-color */
+  font-family: "Roboto", sans-serif; /* put your font-family */
+  padding: 0.8rem 0px;
+  width: 150px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.effect.effect-5 {
+  transition: all 0.2s linear 0s;
+  cursor: pointer;
+}
+.effect.effect-5:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f054";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 30px;
+  background-color: var(--color-medium-green);
+  color: var(--color-dark-green);
+  border-radius: 0 50% 50% 0;
+  transform: scale(0, 1);
+  transform-origin: left center;
+  transition: all 0.2s linear 0s;
+}
+.effect.effect-5:hover {
+  text-indent: 30px;
+}
+.effect.effect-5:hover:before {
+  transform: scale(1, 1);
+  text-indent: 0;
+}
+.btnLink {
+  background: none;
+  color: #bfb383;
+  border: none;
+  display: inherit;
+  font-size: 1.5rem;
+  padding: 0;
+  cursor: pointer;
+}
+.btnLink:hover {
+  opacity: 0.7;
+}
+
+.careerInfo h4 {
+  color: var(--color-sage);
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --font-size: 16px;
+    --spacing: 8px;
+  }
+
+  .sectionCompanyProfile,
+  .sectionOurService,
+  .sectionCareer,
+  .sectionClient .cards {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+  .sectionCompanyProfile > div,
+  .sectionOurService > div,
+  .sectionCareer > div {
+    flex: initial;
+  }
+  div.companyDetails {
+    padding: 0;
+  }
+
+  .sectionClient {
+    padding-block: 2rem;
+  }
+
+  .cards:after {
+    content: none;
+    background-color: initial;
+  }
+}

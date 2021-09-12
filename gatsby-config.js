@@ -4,6 +4,7 @@ module.exports = {
     title: "Raffles",
   },
   plugins: [
+    "gatsby-plugin-fontawesome-css",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
