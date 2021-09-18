@@ -130,6 +130,7 @@ div.companyDetails {
 
 .cards > div {
   z-index: 3;
+  max-width: 500px;
 }
 
 .cards:after {

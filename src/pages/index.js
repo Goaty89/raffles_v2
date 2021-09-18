@@ -2,6 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import { StaticImage } from "gatsby-plugin-image";
 import * as styles from "./index.module.css";
+import Footer from "../components/footer";
 
 const IndexPage = () => {
   return (
@@ -128,6 +129,7 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
