@@ -69,7 +69,11 @@ section:first-of-type {
 }
 .logo {
   position: absolute;
-  top: 20vh;
+  top: 5vh;
+  left: 5vw;
+}
+.imgLogo {
+  width: 100%;
 }
 .hero {
   display: flex;
@@ -77,17 +81,25 @@ section:first-of-type {
   flex-direction: column;
   padding-left: 1vw;
 }
+.limitScreenSize {
+  max-width: 1440px;
+  margin: 0 auto;
+}
 
 .sectionCompanyProfile,
-.sectionOurService,
 .sectionCareer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   background-color: var(--color-primary);
 }
+.sectionOurService {
+  display: grid;
+  grid-template-columns: clamp(410px, 100%, 35vw) 1fr;
+  column-gap: 0.5rem;
+  row-gap: 2rem;
+}
 .sectionCompanyProfile > div,
-.sectionOurService > div,
 .sectionCareer > div {
   flex: 1 1 50%;
   display: flex;
@@ -148,8 +160,13 @@ div.companyDetails {
 }
 
 .services {
-  flex-direction: column;
+  grid-column: 1 / span 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 2rem;
+  padding-inline: 1rem;
 }
+
 .services > div {
   display: flex;
 }
@@ -162,8 +179,30 @@ div.companyDetails {
   color: var(--color-sage);
 }
 
+.servicesQuestion {
+  grid-column: 1 / span 2;
+  margin: 2rem 1rem;
+}
+
+.serviceContent h5,
+.serviceTitle {
+  margin-bottom: 1rem;
+}
+.serviceContent h5:before {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 5px;
+  border-radius: 4px;
+  margin-bottom: 9px;
+  background-color: khaki;
+}
+
+.serviceContent {
+  color: #dcdcdc;
+}
 .imgService {
-  max-width: 400px;
+  max-width: 80%;
 }
 .imgCareer {
   max-width: 600px;
@@ -242,10 +281,17 @@ div.companyDetails {
     flex-direction: column;
     padding: 2rem 1rem;
   }
+  .sectionOurService {
+    display: flex;
+    flex-direction: column;
+  }
   .sectionCompanyProfile > div,
   .sectionOurService > div,
   .sectionCareer > div {
     flex: initial;
+  }
+  .sectionOurService > div {
+    padding: 1rem 0;
   }
   div.companyDetails {
     padding: 0;
@@ -258,5 +304,24 @@ div.companyDetails {
   .cards:after {
     content: none;
     background-color: initial;
+  }
+
+  .logo {
+    position: absolute;
+    top: 8vh;
+    left: calc(50vw - 100px);
+  }
+  .imgLogo {
+    width: 200px;
+  }
+
+  .services {
+    grid-column: 1 / span 2;
+    display: initial;
+  }
+
+  .imgService {
+    width: clamp(400 px, 100%, 100%);
+    max-width: initial;
   }
 }
